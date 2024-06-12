@@ -27,3 +27,5 @@ mysqldump -u root -pmysql1234 DB TABLA --no-create-info --where="id > N" > Ruta\
 ```
 
 
+mysqldump -u root -pmysql1234 ht1_g0 > C:\Users\Jhonathan\Desktop\Ejemplo5\HT1\backup_completo1.sql
+mysqldump -u root -pmysql1234 ht1_g0 personas > C:\Users\Jhonathan\Desktop\Ejemplo5\HT1\backup_incremental1.sql
