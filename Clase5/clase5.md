@@ -26,6 +26,17 @@ creamos un respaldo incremental que solo contiene los datos nuevos sin la estruc
 mysqldump -u root -pmysql1234 DB TABLA --no-create-info --where="id > N" > Ruta\incremental2.sql
 ```
 
-
+Backup completo
 mysqldump -u root -pmysql1234 ht1_g0 > C:\Users\Jhonathan\Desktop\Ejemplo5\HT1\backup_completo1.sql
+mysqldump -u root -pmysql1234 ht1_g0 > C:\Users\Jhonathan\Desktop\Ejemplo5\HT1\backup_completo2.sql
+
+Incremental
 mysqldump -u root -pmysql1234 ht1_g0 personas > C:\Users\Jhonathan\Desktop\Ejemplo5\HT1\backup_incremental1.sql
+mysqldump -u root -pmysql1234 ht1_g0 personas --no-create-info --where="id > 5" > C:\Users\Jhonathan\Desktop\Ejemplo5\HT1\backup_incremental2.sql
+
+Restaurar
+mysql -u root -pmysql1234 ht1_g0 < C:\Users\Jhonathan\Desktop\Ejemplo5\HT1\backup_completo1.sql
+mysql -u root -pmysql1234 ht1_g0 < C:\Users\Jhonathan\Desktop\Ejemplo5\HT1\backup_completo2.sql
+
+mysql -u root -pmysql1234 ht1_g0 < C:\Users\Jhonathan\Desktop\Ejemplo5\HT1\backup_incremental1.sql
+mysql -u root -pmysql1234 ht1_g0 < C:\Users\Jhonathan\Desktop\Ejemplo5\HT1\backup_incremental2.sql
